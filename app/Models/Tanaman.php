@@ -13,6 +13,7 @@ class Tanaman extends Model
         'slug',
         'nama_latin',
         'images',
+        'video',
         'taksanomi',
         'deskripsi',
         'asalsebaran',

@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('slug');
             $table->string('nama_latin');
             $table->json('images');
+            $table->longText('video');
             $table->json('taksanomi');
             $table->longText('deskripsi');
             $table->longText('asalsebaran');

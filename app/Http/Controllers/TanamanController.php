@@ -46,6 +46,7 @@ class TanamanController extends Controller
             $tanaman->slug = $slug;
             $tanaman->nama_latin = $request->nama_latin;
             $tanaman->images = $images;
+            $tanaman->video = $request->video;
             $tanaman->taksanomi = $taksanomi;
             $tanaman->deskripsi = $request->deskripsi;
             $tanaman->asalsebaran = $request->asalsebaran;

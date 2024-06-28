@@ -31,7 +31,14 @@
                 <div class="swiper">
                     <div class="swiper-wrapper">
                         @php
+
+                            $video = null;
                             $images = json_decode($tanaman->images);
+                            if ($tanaman->video != null) {
+                                // https://youtu.be/5GXkWPcvHr0?si=MoYo4VGnfn2Kp2i5
+                                // video = https://www.youtube.com/embed/5GXkWPcvHr0
+                                $video = str_replace('youtu.be', 'www.youtube.com/embed', $tanaman->video);
+                            }
                         @endphp
                         @foreach ($images as $image)
                             @php
@@ -41,6 +48,17 @@
                                 <img src="{{ asset('storage/' . $image) }}" alt="">
                             </div>
                         @endforeach
+                        @if ($video != null)
+                            <div class="swiper-slide">
+                                {{-- video dari youtube --}}
+                                <div class="video">
+                                    <iframe width="100%" height="200%"
+                                        src="{{ $video }}?controls=0" title="YouTube video player"
+                                        frameborder="0"
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -160,7 +178,7 @@
             }else if(indexCategory == 4){
                 groupDetail.innerHTML = '{{ $tanaman->manfaat }}'
             }else if(indexCategory == 5){
-                groupDetail.innerHTML = '{{ $tanaman->sumber }}'
+                groupDetail.innerHTML = '<a href={{$tanaman->sumber}}>{{ $tanaman->sumber }}<a>'
             }
 
         }

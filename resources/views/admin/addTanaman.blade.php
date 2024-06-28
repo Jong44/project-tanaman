@@ -28,6 +28,10 @@
                     <label for="images">Image</label>
                     <input type="file" name="images[]" id="images" multiple required>
                 </div>
+                <div class="input-row">
+                    <label for="images">Link Video</label>
+                    <input type="text" name="video" id="video" required>
+                </div>
             </div>
             <div class="group-input">
                 <h5>Taksanomi</h5>
